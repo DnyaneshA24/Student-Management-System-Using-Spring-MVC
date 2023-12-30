@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<nav>
+		<a href="home_page">HOME</a> <br> <a href="add_student">ADD STUDENT</a> <a
+			href="delete_student">DELETE STUDENT</a> <a href="get_students">GET ALL STUDENTS</a> <a
+			href="edit_student">EDIT STUDENT</a> <a href="search">SEARCH</a>
+	</nav>
+
+
+</body>
+</html>

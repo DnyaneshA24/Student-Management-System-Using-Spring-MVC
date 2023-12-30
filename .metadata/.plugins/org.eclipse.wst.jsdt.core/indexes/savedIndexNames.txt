@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\J2EE\SMSWithSpringMvc\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4036339998.index
+1844486995.index
+962767323.index
+1047936053.index
+2126580481.index
+1265367487.index
+3449418847.index

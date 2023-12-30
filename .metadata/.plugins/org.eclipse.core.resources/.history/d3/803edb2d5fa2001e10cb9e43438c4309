@@ -1,0 +1,31 @@
+package com.jspiders.smswithSpringMVC.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.jspiders.smswithSpringMVC.pojo.AdminPOJO;
+import com.jspiders.smswithSpringMVC.repository.AdminRepo;
+
+@Component
+public class AdminService {
+
+	@Autowired
+	private AdminRepo adminRepo;
+
+	public void addAdmin(String userName, String email, String password) {
+		AdminPOJO adminPOJO = new AdminPOJO();
+		adminPOJO.setUserName(userName);
+		adminPOJO.setEmail(email);
+		adminPOJO.setPassword(password);
+		adminRepo.addAdmin(adminPOJO);
+
+	}
+
+	public List<AdminPOJO> getAllAdmins() {
+		List<AdminPOJO> admins = adminRepo.getAllAdmins();
+		return admins;
+	}
+
+}

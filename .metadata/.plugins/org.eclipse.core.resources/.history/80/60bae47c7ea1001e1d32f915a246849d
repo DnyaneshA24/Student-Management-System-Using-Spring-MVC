@@ -1,0 +1,5 @@
+package com.jspiders.smswithSpringMVC.pojo;
+
+public class AdminPOJO {
+
+}

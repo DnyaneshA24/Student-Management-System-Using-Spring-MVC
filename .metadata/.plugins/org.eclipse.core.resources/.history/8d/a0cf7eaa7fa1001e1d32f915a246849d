@@ -1,0 +1,5 @@
+package com.jspiders.smswithSpringMVC.repository;
+
+public class AdminRepo {
+
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+D:\J2EE\SMSWithSpringMvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4003948850.index
+\smswithSpringMVC\src\main\java
+D:\J2EE\SMSWithSpringMvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1265367487.index
+\smswithSpringMVC\src\main\java

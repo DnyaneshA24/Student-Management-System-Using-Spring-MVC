@@ -1,0 +1,64 @@
+package com.jspiders.smswithSpringMVC.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.jspiders.smswithSpringMVC.pojo.AdminPOJO;
+import com.jspiders.smswithSpringMVC.service.AdminService;
+
+@Controller
+public class AdminController {
+
+	@Autowired
+	private AdminService adminService;
+
+	@RequestMapping(path = "/add_admin", method = RequestMethod.GET)
+	public String getPageToAddAdmin() {
+		return "add_admin";
+	}
+
+	@RequestMapping(path = "/add_admin", method = RequestMethod.POST)
+	public String addAdmin(@RequestParam String userName, @RequestParam String email, @RequestParam String password,
+			ModelMap modelMap) {
+		adminService.addAdmin(userName, email, password);
+		modelMap.addAttribute("message", "Signed up.");
+		return "log_in";
+	}
+
+	@RequestMapping(path = "/log_in", method = RequestMethod.GET)
+	public String getLoginPage() {
+		return "log_in";
+
+	}
+
+	@RequestMapping(path = "/log_in", method = RequestMethod.POST)
+	public String logIn(@RequestParam String email, @RequestParam String password, ModelMap modelMap) {
+		List<AdminPOJO> admins = adminService.getAllAdmins();
+		String pass = "";
+		for (AdminPOJO admin : admins) {
+			if (admin.getEmail().equals(email) && admin.getPassword().equals(password)) {
+				pass = "home_page";
+				break;
+			} else {
+				modelMap.addAttribute("message", "Invalid Credentials.");
+				pass = "log_in";
+			}
+		}
+
+		return pass;
+
+	}
+
+	@RequestMapping(path = "")
+	public String deleteAdmin(String email, ModelMap modelMap) {
+		adminService.deleteAdmin(email);
+		return null;
+	}
+
+}
